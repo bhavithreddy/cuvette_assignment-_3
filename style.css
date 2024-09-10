@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  background: #647299;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Sets the max width for larger screens */
+}
+
+.row {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  width: 60px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 15px;
+}
+.button:hover {
+  background-color: #d3d3d3; /* Changes background color on hover */
+  transform: scale(1.05); /* Slightly increases the size */
+  border-color: #000000; /* Optionally change border color */
+}
+.button1:hover {
+  background-color: #d3d3d3; /* Changes background color on hover */
+  transform: scale(1.05); /* Slightly increases the size */
+  border-color: #000000; /* Optionally change border color */
+}
+
+.row1 {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.row1 button {
+  width: 45%;
+  color: white;
+}
+
+.top-container {
+  width: 100%; /* 100% for mobile */
+  padding: 0 10px -1;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0;
+  text-align: left;
+  color: white;
+}
+
+#input {
+  margin: 10px 0;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background: #181f32;
+  color: white;
+  font-size: 20px;
+  text-align: right;
+}
+#input.text {
+  color: white;
+}
+
+.bottom-container {
+  background: #252d44;
+  padding: 10px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.button1 {
+  width: 60px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  /* For tablets */
+  .container {
+    max-width: 450px;
+  }
+
+  .button,
+  .button1 {
+    width: 70px;
+    padding: 18px;
+  }
+
+  .input {
+    height: 70px;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* For desktops */
+  .container {
+    max-width: 500px;
+  }
+
+  .button,
+  .button1 {
+    width: 80px;
+    padding: 20px;
+    /* column-gap: 20px; */
+  }
+
+  .input {
+    height: 80px;
+    font-size: 28px;
+  }
+}
