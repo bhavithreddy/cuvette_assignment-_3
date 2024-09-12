@@ -17,21 +17,34 @@ function deleteLast() {
 
 // Validate the expression before calculating
 function validateExpression(expression) {
-  // Regular expression to check if the expression starts with an operator or is invalid
-  const invalidStart = /^[\+\-\*\/]/.test(expression);
-  const invalidEnd = /[\+\-\*\/]$/.test(expression);
+  // Check if the expression is valid
+  const invalidStart = /^[\+\-\*\/]/.test(expression); // Check for starting with an operator
+  const invalidEnd = /[\+\-\*\/]$/.test(expression); // Check for ending with an operator
+  const invalidEqualSign = /={2,}/.test(expression); // Check for multiple "=" (like "==", "===")
 
-  // Simple validation: Expression should not start or end with an operator
-  return !(invalidStart || invalidEnd || expression.trim() === "");
+  // Simple validation: Expression should not start or end with an operator or have multiple "="
+  return !(
+    invalidStart ||
+    invalidEnd ||
+    invalidEqualSign ||
+    expression.trim() === ""
+  );
 }
 
 // Evaluate the expression and display the result (when "=" is clicked)
 function calculateResult() {
   const expression = input.value;
 
+  // Avoid evaluating empty input or invalid input
+  if (expression.trim() === "") {
+    input.value = ""; // Do nothing if input is empty
+    return;
+  }
+
+  // Check if expression is valid
   if (validateExpression(expression)) {
     try {
-      input.value = eval(expression); // eval() evaluates the string as a mathematical expression
+      input.value = eval(expression); // Evaluate the expression
     } catch (error) {
       input.value = "Error"; // Handle invalid expressions
     }
